@@ -1,5 +1,7 @@
 """""
 #Ejercicio 1
+
+
 def saludarusuario(nombre:str):
     print("Hola", nombre)
 
@@ -7,42 +9,87 @@ saludarusuario(nombre = input("Dime el nombre del usuario:\n"))
 
 #Ejercicio 2
 
-def calcularrect (base:int, altura:int):
-    print("El perímetro es", base*2+altura*2)
-    print("El área es", base*altura)
+def calcularrectp (base:int, altura:int):
+    perimetro = base*2+altura*2
+    return perimetro
 
-calcularrect (2,4)
+perimetro= calcularrectp (1,2)
+print ("El perímetro es", perimetro)
+
+def calcularrecta (base:int, altura:int):
+    area= base*altura
+    return area
+
+area = calcularrecta (1,2)
+print ("El área es", area )
+
+def calcularareayper(base:int, altura:int):
+     vDatos=[]
+     area = calcularrecta(base,altura)
+     perimetro=calcularrectp(base,altura)
+     vDatos.append(area)
+     vDatos.append(perimetro)
+     return vDatos
+
+base= int(input("Dime el valor de la base:"))
+altura= int(input("Dime el valor de la altura:"))
+
+vNum = calcularareayper(base,altura)
+print("El área es", vNum[0])
+print("El perímetro es", vNum[1])
+
 
 #Ejercicio 3
+
 import math
 def calculartri (cateto1=int, cateto2=int):
-    print ("La hipotenusa es", math.sqrt(cateto1**2+cateto2**2))
+    return math.sqrt(cateto1**2+cateto2**2)
 
-calculartri (2,2)
+hipotenusa = calculartri (1,2)
+print("La hipotenusa es", hipotenusa)
 
 #Ejercicio 4
 
 def sumanums(num1=int, num2=int):
-    print("La suma es", num1+num2)
-    print("La resta es", num1-num2)
-    print("La multiplicación es", num1*num2)
-    print("La división es", num1/num2)
+    return num1+num2
+def restanums(num1=int, num2= int):
+    return num1-num2
+def multnums(num1=int, num2=int):
+    return num1*num2
+def divnums(num1= int, num2= int):
+    return num1/num2
 
-sumanums(2,2)
+suma = sumanums (1,2)
+print("La suma es", suma)
+resta= restanums (1,2)
+print("La resta es", resta)
+multiplicacion = multnums (1,2)
+print("La multiplicación es", multiplicacion)
+division= divnums (1,2)
+print("La división es", division)
+
+
 
 #Ejercicio 5
 
 def calculargrados(grados=int):
-    print("Son:", (grados-32)*(5/9), "grados Celsius")
+      return (grados-32)*(5/9)
 
-calculargrados (60)
+grados= calculargrados (60)
+print("Los grados son", grados)
 """""
 #Ejercicio 6
 def medianumerica(num1=int, num2=int, num3=int):
-    print("La media es", (num1+num2+num3/3))
+    media=(num1+num2+num3)/3
+    return media
 
-medianumerica(num1 = int(input("Dime el número 1:\n")))
-medianumerica(num2 = int(input("Dime el número 2:\n")))
-medianumerica(num3 = int(input("Dime el número 3:\n")))
+num1= int(input("Dime el valor del número 1:"))
+num2= int(input("Dime el valor del número 2:"))
+num3= int(input("Dime el valor del número 3:"))
+
+media = medianumerica(num1,num2,num3)
+print("La media es", media)
+
+
 
 
